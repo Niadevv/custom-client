@@ -818,6 +818,10 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
 		shortDesc: "Raises the user's Atk/Def/SpAtk/SpDef/Spe by 1.",
 	},
+	claysmack: {
+		name: "Clay Smack",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
 	clearsmog: {
 		name: "Clear Smog",
 		shortDesc: "Resets all of the target's stat stages to 0.",
@@ -1068,6 +1072,11 @@ export const MovesText: {[k: string]: MoveText} = {
 
 		start: "  [SOURCE] cut its own HP and put a curse on [POKEMON]!",
 		damage: "  [POKEMON] is afflicted by the curse!",
+	},
+	curseddance: {
+		name: "Cursed Dance",
+		desc: "Raises the user's Speed by 2 stages and its Special Attack by 1 stage.",
+		shortDesc: "Raises the user's Speed by 2 and Special Attack by 1.",
 	},
 	cut: {
 		name: "Cut",
@@ -2581,6 +2590,11 @@ export const MovesText: {[k: string]: MoveText} = {
 
 		activate: "  Everyone is caught up in the happy atmosphere!",
 	},
+	happyvalentine: {
+		name: "Happy Valentine",
+		desc: "50% chance to raise either Defense, Sp.Def, and Speed, or Attack, Sp.Atk, and Speed by 4 stages as long as the stat is not already at stage 6. Fails if no stat stage can be raised.",
+		shortDesc: "Raises Def/SpDef/Spe or Atk/SpAtk/Spe 4 stages",
+	},
 	harden: {
 		name: "Harden",
 		desc: "Raises the user's Defense by 1 stage.",
@@ -3080,6 +3094,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		name: "Iron Head",
 		desc: "Has a 30% chance to make the target flinch.",
 		shortDesc: "30% chance to make the target flinch.",
+	},
+	ironmaw: {
+		name: "Iron Maw",
+		desc: "Has a 10% chance to make the target flinch.",
+		shortDesc: "10% chance to make the target flinch.",
 	},
 	irontail: {
 		name: "Iron Tail",
@@ -4045,6 +4064,11 @@ export const MovesText: {[k: string]: MoveText} = {
 
 		start: "  [POKEMON] can no longer escape because it used No Retreat!",
 	},
+	numbingviolin: {
+		name: "Numbing Violin",
+		desc: "Puts target to sleep, overwrites any other status.",
+		shortDesc: "Overwrites foe's status with sleep.",
+	},
 	nuzzle: {
 		name: "Nuzzle",
 		desc: "Has a 100% chance to paralyze the target.",
@@ -4504,6 +4528,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		name: "Punishment",
 		desc: "Power is equal to 60+(X*20), where X is the target's total stat stage changes that are greater than 0, but not more than 200 power.",
 		shortDesc: "60 power +20 for each of the target's stat boosts.",
+	},
+	purgingflame: {
+		name: "Purging Flame",
+		desc: "10% chance to burn. 10% chance to flinch. Fire-type in sun, else Dark-type.",
+		shortDesc: "10% burn. 10% flinch. Fire-type in sun.",
 	},
 	purify: {
 		name: "Purify",
@@ -5109,6 +5138,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		name: "Shadow Claw",
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
+	},
+	shadowfang: {
+		name: "Shadow Fang",
+		desc: "No additional effect.",
+		shortDesc: "No additional effect.",
 	},
 	shadowforce: {
 		name: "Shadow Force",

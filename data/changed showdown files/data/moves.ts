@@ -2236,6 +2236,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Dragon",
 		contestType: "Cool",
 	},
+	claysmack: {
+		num: 3008,
+		accuracy: 100,
+		basePower: 30,
+		category: "Physical",
+		name: "Clay Smack",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		multihit: [2, 5],
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Smart",
+	},
 	clearsmog: {
 		num: 499,
 		accuracy: true,
@@ -2920,6 +2935,29 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Ghost",
 		zMove: {effect: 'curse'},
 		contestType: "Tough",
+	},
+	curseddance: {
+		num: 3000,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Cursed Dance",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1, dance: 1},
+		boosts: {
+			spe: 2,
+			spa: 1,
+		},
+		onPrepareHit(source) {
+			this.add('[still]');
+			this.add('-anim', source, 'Quiver Dance');
+		},
+		secondary: null,
+		target: "self",
+		type: "Ghost",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Beautiful",
 	},
 	cut: {
 		num: 15,
@@ -7605,6 +7643,31 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {atk: 1, def: 1, spa: 1, spd: 1, spe: 1}},
 		contestType: "Cute",
 	},
+	happyvalentine: {
+		num: 3005,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Happy Valentine",
+		pp: 5,
+		priority: 0,
+		flags: {snatch: 1},
+		secondary: {
+			onHit(target) {
+				const result = this.random(2);
+				if (result === 0) {
+					this.boost({def: 4, spd: 4, spe: 4});
+				} else {
+					this.boost({atk: 4, spa: 4, spe: 4});
+				}
+			},
+		},
+		// secondary: null,
+		target: "self",
+		type: "Normal",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Tough",
+	},
 	harden: {
 		num: 106,
 		accuracy: true,
@@ -9119,6 +9182,22 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Steel",
 		contestType: "Tough",
+	},
+	ironmaw: {
+		num: 3002,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Iron Maw",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, bite: 1, contact: 1},
+		target: "normal",
+		type: "Steel",
+		secondary: {
+			chance: 10,
+			volatileStatus: 'flinch',
+		},
 	},
 	irontail: {
 		num: 231,
@@ -11491,7 +11570,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 0,
 		category: "Status",
 		name: "Moonlight",
-		pp: 5,
+		pp: 10,
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
 		onHit(pokemon) {
@@ -11522,7 +11601,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 0,
 		category: "Status",
 		name: "Morning Sun",
-		pp: 5,
+		pp: 10,
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
 		onHit(pokemon) {
@@ -11959,6 +12038,22 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondary: null,
 		target: "self",
 		type: "Fighting",
+	},
+	numbingviolin: {
+		num: 3006,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Numbing Violin",
+		pp: 10,
+		priority: 0,
+		flags: {sound: 1, protect: 1, reflectable: 1, mirror: 1, authentic: 1},
+		status: 'slp',
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Beautiful",
 	},
 	nuzzle: {
 		num: 609,
@@ -13378,6 +13473,40 @@ export const Moves: {[moveid: string]: MoveData} = {
 		maxMove: {basePower: 130},
 		contestType: "Cool",
 	},
+	purgingflame: {
+		num: 3007,
+		accuracy: 100,
+		basePower: 95,
+		category: "Special",
+		name: "Purging Flame",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, pulse: 1, mirror: 1, distance: 1},
+		secondary: {
+			chance: 20,
+			onHit(target, source) {
+				const result = this.random(2);
+				if (result > 0) {
+					target.addVolatile('flinch', source);
+				} else {
+					target.trySetStatus('brn', source);
+				}
+			},
+		},
+		onModifyType(move, pokemon) {
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				move.type = 'Fire';
+				break;
+			default:
+				move.type = 'Dark';
+			}
+		},
+		target: "any",
+		type: "Dark",
+		contestType: "Cool",
+	},
 	purify: {
 		num: 685,
 		accuracy: true,
@@ -13780,7 +13909,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Cool",
 	},
 	recharge: {
-		num: 105,
+		num: 3003,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -13954,7 +14083,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Beautiful",
 	},
 	repair: {
-		num: 105,
+		num: 3004,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -14997,6 +15126,19 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Ghost",
 		contestType: "Cool",
+	},
+	shadowfang: {
+		num: 3001,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Shadow Fang",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, bite: 1},
+		drain: [1, 3],
+		target: "normal",
+		type: "Ghost",
 	},
 	shadowforce: {
 		num: 467,
@@ -17531,7 +17673,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 0,
 		category: "Status",
 		name: "Synthesis",
-		pp: 5,
+		pp: 10,
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
 		onHit(pokemon) {
