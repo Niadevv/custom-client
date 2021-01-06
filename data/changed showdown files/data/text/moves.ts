@@ -74,8 +74,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	aeroblast: {
 		name: "Aeroblast",
-		desc: "Has a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio.",
+		desc: "Has a higher chance for a critical hit. Has a 40% chance to flinch the target.",
+		shortDesc: "High crit ratio. 40% chance to flinch the target.",
 	},
 	afteryou: {
 		name: "After You",
@@ -351,11 +351,11 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	behemothbash: {
 		name: "Behemoth Bash",
-		shortDesc: "Damage doubles if the target is Dynamaxed.",
+		shortDesc: "2x damage on dynamax. Breaks Protect. Uses Def.",
 	},
 	behemothblade: {
 		name: "Behemoth Blade",
-		shortDesc: "Damage doubles if the target is Dynamaxed.",
+		shortDesc: "Double damage on dynamax. Breaks Protect.",
 	},
 	belch: {
 		name: "Belch",
@@ -487,8 +487,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	blueflare: {
 		name: "Blue Flare",
-		desc: "Has a 20% chance to burn the target.",
-		shortDesc: "20% chance to burn the target.",
+		desc: "Has a 20% chance to burn the target. Breaks Protect.",
+		shortDesc: "20% chance to burn the target. Breaks Protect.",
 	},
 	bodypress: {
 		name: "Body Press",
@@ -505,13 +505,13 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	boltbeak: {
 		name: "Bolt Beak",
-		desc: "Power doubles if the user moves before the target.",
-		shortDesc: "Power doubles if user moves before the target.",
+		desc: "Power is multiplied by 1.5 if the user moves before the target.",
+		shortDesc: "Power x1.5 if user moves before the target.",
 	},
 	boltstrike: {
 		name: "Bolt Strike",
-		desc: "Has a 20% chance to paralyze the target.",
-		shortDesc: "20% chance to paralyze the target.",
+		desc: "Has a 20% chance to paralyze the target. Breaks Protect.",
+		shortDesc: "20% chance to paralyze the target. Breaks Protect.",
 	},
 	boneclub: {
 		name: "Bone Club",
@@ -937,8 +937,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	coreenforcer: {
 		name: "Core Enforcer",
-		desc: "If the user moves after the target, the target's Ability is rendered ineffective as long as it remains active. If the target uses Baton Pass, the replacement will remain under this effect. If the target's Ability is As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode, this effect does not happen, and receiving the effect through Baton Pass ends the effect immediately.",
-		shortDesc: "Nullifies the foe(s) Ability if the foe(s) move first.",
+		desc: "The target's Ability is rendered ineffective as long as it remains active. If the target uses Baton Pass, the replacement will remain under this effect. If the target's Ability is As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode, this effect does not happen, and receiving the effect through Baton Pass ends the effect immediately. Uses users higher offensive stat for damage calculation.",
+		shortDesc: "Nullifies the foe(s) Ability. Uses higher offense.",
 		gen7: {
 			desc: "If the user moves after the target, the target's Ability is rendered ineffective as long as it remains active. If the target uses Baton Pass, the replacement will remain under this effect. If the target's Ability is Battle Bond, Comatose, Disguise, Multitype, Power Construct, RKS System, Schooling, Shields Down, Stance Change, or Zen Mode, this effect does not happen, and receiving the effect through Baton Pass ends the effect immediately.",
 		},
@@ -1464,7 +1464,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	dynamaxcannon: {
 		name: "Dynamax Cannon",
-		shortDesc: "Damage doubles if the target is Dynamaxed.",
+		shortDesc: "2x damage on dmax & targets with max HP >= 450. Breaks Protect.",
 	},
 	dynamicpunch: {
 		name: "Dynamic Punch",
@@ -1636,8 +1636,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	eternabeam: {
 		name: "Eternabeam",
-		desc: "If this move is successful, the user must recharge on the following turn and cannot select a move.",
-		shortDesc: "User cannot move next turn.",
+		desc: "Breaks Protection.",
+		shortDesc: "Breaks Protection.",
 	},
 	expandingforce: {
 		name: "Expanding Force",
@@ -1840,8 +1840,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	fishiousrend: {
 		name: "Fishious Rend",
-		desc: "Power doubles if the user moves before the target.",
-		shortDesc: "Power doubles if user moves before the target.",
+		desc: "Power is multiplied by 1.5 if the user moves before the target.",
+		shortDesc: "Power x1.5 if user moves before the target.",
 	},
 	fissure: {
 		name: "Fissure",
@@ -1945,8 +1945,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	floralhealing: {
 		name: "Floral Healing",
-		desc: "The target restores 1/2 of its maximum HP, rounded half up. If the terrain is Grassy Terrain, the target instead restores 2/3 of its maximum HP, rounded half down.",
-		shortDesc: "Heals the target by 50% of its max HP.",
+		desc: "The target restores 1/2 of its maximum HP, rounded half up in doubles. If the terrain is Grassy Terrain, the target instead restores 2/3 of its maximum HP, rounded half down. Restores 50% of the users maximum HP, rounded half up in singles.",
+		shortDesc: "Heals the user by 50% of its max HP.",
 	},
 	flowershield: {
 		name: "Flower Shield",
@@ -2068,8 +2068,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	freezeshock: {
 		name: "Freeze Shock",
-		desc: "Has a 30% chance to paralyze the target. This attack charges on the first turn and executes on the second. If the user is holding a Power Herb, the move completes in one turn.",
-		shortDesc: "Charges turn 1. Hits turn 2. 30% paralyze.",
+		desc: "10% chance to freeze, 30% chance to paralyze. Breaks Protect.",
+		shortDesc: "10% freeze, 30% paralyze. Breaks Protect.",
 
 		prepare: "  [POKEMON] became cloaked in a freezing light!",
 	},
@@ -2869,8 +2869,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	hurricane: {
 		name: "Hurricane",
-		desc: "Has a 30% chance to confuse the target. This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
-		shortDesc: "30% chance to confuse target. Can't miss in rain.",
+		desc: "Has a 30% chance to confuse the target. This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If the weather is Primordial Sea, Rain Dance, Delta Stream, or Windstorm, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
+		shortDesc: "30% chance to confuse target. Can't miss in rain/windstorm.",
 		gen7: {
 			desc: "Has a 30% chance to confuse the target. This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%.",
 		},
@@ -2918,8 +2918,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	hyperspacehole: {
 		name: "Hyperspace Hole",
-		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
-		shortDesc: "Breaks the target's protection for this turn.",
+		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. The user then switches after using.",
+		shortDesc: "Breaks target's protection. User switches.",
 		gen6: {
 			desc: "If this move is successful, it breaks through the target's Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
 		},
@@ -2950,8 +2950,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	iceburn: {
 		name: "Ice Burn",
-		desc: "Has a 30% chance to burn the target. This attack charges on the first turn and executes on the second. If the user is holding a Power Herb, the move completes in one turn.",
-		shortDesc: "Charges turn 1. Hits turn 2. 30% burn.",
+		desc: "10% chance to freeze, 30% chance to burn. Breaks Protect.",
+		shortDesc: "10% freeze, 30% burn. Breaks Protect.",
 
 		prepare: "  [POKEMON] became cloaked in freezing air!",
 	},
@@ -3112,8 +3112,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	judgment: {
 		name: "Judgment",
-		desc: "This move's type depends on the user's held Plate.",
-		shortDesc: "Type varies based on the held Plate.",
+		desc: "This move's type depends on the user's held Plate. Uses user's higher offensive stat for damage calculation.",
+		shortDesc: "Type varies with held Plate. Uses higher offense.",
 	},
 	jumpkick: {
 		name: "Jump Kick",
@@ -3140,8 +3140,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	junglehealing: {
 		name: "Jungle Healing",
-		desc: "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up, and has its status condition cured.",
-		shortDesc: "User and allies: healed 1/4 max HP, status cured.",
+		desc: "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up in doubles, restores 50% of users maximum HP in singles. Status conditions are cured.",
+		shortDesc: "Restores 50% of the users max HP, status cured.",
 	},
 	karatechop: {
 		name: "Karate Chop",
@@ -3280,8 +3280,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	lifedew: {
 		name: "Life Dew",
-		desc: "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up.",
-		shortDesc: "Heals the user and its allies by 1/4 their max HP.",
+		desc: "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up in doubles, restores 50% of users maximum HP in singles.",
+		shortDesc: "Heals the user by 1/2 of its max HP.",
 	},
 	lightofruin: {
 		name: "Light of Ruin",
@@ -3893,8 +3893,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	moongeistbeam: {
 		name: "Moongeist Beam",
-		desc: "This move and its effects ignore the Abilities of other Pokemon.",
-		shortDesc: "Ignores the Abilities of other Pokemon.",
+		desc: "This move and its effects ignore the Abilities of other Pokemon. Breaks Protect.",
+		shortDesc: "Ignores Abilities. Breaks Protect.",
 	},
 	moonlight: {
 		name: "Moonlight",
@@ -4076,8 +4076,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	oblivionwing: {
 		name: "Oblivion Wing",
-		desc: "The user recovers 3/4 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
-		shortDesc: "User recovers 75% of the damage dealt.",
+		desc: "The user recovers 3/4 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. 100% chance to lower targets attack and sp. attack 1 stage.",
+		shortDesc: "Recover 75% of damage dealt. Lowers target atk/spatk by 1.",
 	},
 	obstruct: {
 		name: "Obstruct",
@@ -4841,8 +4841,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	roaroftime: {
 		name: "Roar of Time",
-		desc: "If this move is successful, the user must recharge on the following turn and cannot select a move.",
-		shortDesc: "User cannot move next turn.",
+		desc: "If this move is successful, causes passive damage to trigger 3 times consecutively. Breaks protect.",
+		shortDesc: "Triggers passive damage 3 times. Breaks Protect.",
 	},
 	rockblast: {
 		name: "Rock Blast",
@@ -5146,8 +5146,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	shadowforce: {
 		name: "Shadow Force",
-		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, the move completes in one turn.",
-		shortDesc: "Disappears turn 1. Hits turn 2. Breaks protection.",
+		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. Uses Physical attack if Physical attack is higher, special attack if special attack is higher.",
+		shortDesc: "Breaks protection. Uses higher offensive stat.",
 		gen6: {
 			desc: "If this move is successful, it breaks through the target's Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, the move completes in one turn. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
 		},
@@ -5552,8 +5552,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	spacialrend: {
 		name: "Spacial Rend",
-		desc: "Has a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio.",
+		desc: "Has a higher chance for a critical hit. Breaks Protect. If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated. Ignores defense boosts.",
+		shortDesc: "High crit ratio. Ignores defense boosts. Breaks Protect + Screens.",
 	},
 	spark: {
 		name: "Spark",
@@ -5945,8 +5945,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	sunsteelstrike: {
 		name: "Sunsteel Strike",
-		desc: "This move and its effects ignore the Abilities of other Pokemon.",
-		shortDesc: "Ignores the Abilities of other Pokemon.",
+		desc: "This move and its effects ignore the Abilities of other Pokemon. Breaks Protect.",
+		shortDesc: "Ignores Abilities. Breaks Protect.",
 	},
 	superfang: {
 		name: "Super Fang",
@@ -6454,7 +6454,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	triplekick: {
 		name: "Triple Kick",
-		desc: "Hits three times. Power increases to 20 for the second hit and 30 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+		desc: "Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
 		shortDesc: "Hits 3 times. Each hit can miss, but power rises.",
 		gen4: {
 			desc: "Hits three times. Power increases to 20 for the second hit and 30 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the target has a Focus Sash and had full HP when this move started, it will not be knocked out regardless of the number of hits.",
@@ -6670,7 +6670,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	weatherball: {
 		name: "Weather Ball",
-		desc: "Power doubles if a weather condition other than Delta Stream is active, and this move's type changes to match. Ice type during Hail, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, and Fire type during Desolate Land or Sunny Day. If the user is holding Utility Umbrella and uses Weather Ball during Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, the move is still Normal-type and does not have a base power boost.",
+		desc: "Power doubles if a weather condition is active, and this move's type changes to match. Ice type during Hail, Water type during Primordial Sea or Rain Dance, Rock type during Sandstorm, Fire type during Desolate Land or Sunny Day, and Flying type during Delta Stream or Windstorm. If the user is holding Utility Umbrella and uses Weather Ball during Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, the move is still Normal-type and does not have a base power boost.",
 		shortDesc: "Power doubles and type varies in each weather.",
 		gen5: {
 			desc: "Power doubles if a weather condition is active, and this move's type changes to match. Ice type during Hail, Water type during Rain Dance, Rock type during Sandstorm, and Fire type during Sunny Day.",
@@ -6742,8 +6742,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	wildcharge: {
 		name: "Wild Charge",
-		desc: "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 1/4 recoil.",
+		shortDesc: "No additional effect.",
 	},
 	willowisp: {
 		name: "Will-O-Wisp",
