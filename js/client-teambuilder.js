@@ -1148,7 +1148,7 @@
 		renderSet: function (set, i) {
 			var species = Dex.getSpecies(set.species);
 			var isLetsGo = this.curTeam.format.includes('letsgo');
-			var isNatDex = this.curTeam.format.includes('nationaldex');
+			var isNatDex = this.curTeam.format.includes('nationaldex') || this.curTeam.format.includes('heatenteis');
 			var buf = '<li value="' + i + '">';
 			if (!set.species) {
 				if (this.deletedSet) {
